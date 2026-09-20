@@ -5,11 +5,24 @@ const distDir = path.resolve('dist');
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
-fs.copyFileSync(path.resolve('index.html'), path.join(distDir, 'index.html'));
-if (fs.existsSync(path.resolve('bep-logo.js'))) {
-  fs.copyFileSync(path.resolve('bep-logo.js'), path.join(distDir, 'bep-logo.js'));
+
+const filesToCopy = [
+  'index.html',
+  'bep-logo.js',
+  'report-card-assets.js',
+  'logo.svg',
+  'logo.png',
+  'favicon.png',
+  'share-thumbnail.png',
+  'share-thumbnail.svg',
+  'og-image.png'
+];
+
+for (const file of filesToCopy) {
+  const src = path.resolve(file);
+  if (fs.existsSync(src)) {
+    fs.copyFileSync(src, path.join(distDir, file));
+  }
 }
-if (fs.existsSync(path.resolve('report-card-assets.js'))) {
-  fs.copyFileSync(path.resolve('report-card-assets.js'), path.join(distDir, 'report-card-assets.js'));
-}
+
 console.log('Build completed successfully.');

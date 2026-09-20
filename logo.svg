@@ -1,0 +1,93 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f2b5c"/>
+      <stop offset="50%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Circular Rounded Base -->
+  <rect width="512" height="512" rx="128" fill="url(#bgGrad)"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-dasharray="12 8" opacity="0.8"/>
+  <circle cx="256" cy="256" r="224" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+
+  <!-- Golden Laurel Wreath -->
+  <g fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round" opacity="0.9">
+    <path d="M120 340 C 90 280, 95 200, 150 140 C 165 125, 185 115, 210 108" />
+    <path d="M392 340 C 422 280, 417 200, 362 140 C 347 125, 327 115, 302 108" />
+  </g>
+  <!-- Laurel Leaves Left -->
+  <g fill="url(#goldGrad)">
+    <ellipse cx="108" cy="280" rx="8" ry="18" transform="rotate(-35 108 280)"/>
+    <ellipse cx="102" cy="240" rx="8" ry="18" transform="rotate(-20 102 240)"/>
+    <ellipse cx="108" cy="200" rx="8" ry="18" transform="rotate(-5 108 200)"/>
+    <ellipse cx="124" cy="160" rx="8" ry="18" transform="rotate(15 124 160)"/>
+    <ellipse cx="150" cy="130" rx="8" ry="18" transform="rotate(35 150 130)"/>
+    <ellipse cx="185" cy="112" rx="8" ry="18" transform="rotate(55 185 112)"/>
+  </g>
+  <!-- Laurel Leaves Right -->
+  <g fill="url(#goldGrad)">
+    <ellipse cx="404" cy="280" rx="8" ry="18" transform="rotate(35 404 280)"/>
+    <ellipse cx="410" cy="240" rx="8" ry="18" transform="rotate(20 410 240)"/>
+    <ellipse cx="404" cy="200" rx="8" ry="18" transform="rotate(5 404 200)"/>
+    <ellipse cx="388" cy="160" rx="8" ry="18" transform="rotate(-15 388 160)"/>
+    <ellipse cx="362" cy="130" rx="8" ry="18" transform="rotate(-35 362 130)"/>
+    <ellipse cx="327" cy="112" rx="8" ry="18" transform="rotate(-55 327 112)"/>
+  </g>
+
+  <!-- Central Shield -->
+  <g filter="url(#dropShadow)">
+    <path d="M166 140 L346 140 C346 250, 296 330, 256 360 C216 330, 166 250, 166 140 Z" fill="url(#shieldGrad)" stroke="url(#goldGrad)" stroke-width="6"/>
+  </g>
+
+  <!-- Open Book inside shield -->
+  <g transform="translate(206, 210)">
+    <!-- Pages Left & Right -->
+    <path d="M50 40 C30 35, 10 37, 0 45 L0 95 C10 87, 30 85, 50 90 Z" fill="#2563eb"/>
+    <path d="M50 40 C70 35, 90 37, 100 45 L100 95 C90 87, 70 85, 50 90 Z" fill="#1d4ed8"/>
+    <!-- Page lines left -->
+    <line x1="8" y1="56" x2="42" y2="52" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="8" y1="66" x2="42" y2="62" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="8" y1="76" x2="36" y2="72" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <!-- Page lines right -->
+    <line x1="58" y1="52" x2="92" y2="56" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="58" y1="62" x2="92" y2="66" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="58" y1="72" x2="86" y2="76" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <!-- Academic Mortarboard (Graduation Cap) -->
+  <g transform="translate(256, 175)">
+    <!-- Cap Diamond top -->
+    <polygon points="0,-28 65,-4 0,20 -65,-4" fill="#0f172a" stroke="url(#goldGrad)" stroke-width="3"/>
+    <!-- Skull cap bottom -->
+    <path d="M-36 6 C-36 22, 36 22, 36 6 L36 20 C36 34, -36 34, -36 20 Z" fill="#1e293b"/>
+    <!-- Tassel -->
+    <circle cx="0" cy="-4" r="5" fill="#f59e0b"/>
+    <path d="M0 -4 Q30 5, 45 22" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+    <rect x="42" y="22" width="6" height="14" rx="2" fill="#d97706"/>
+  </g>
+
+  <!-- A+ Badge on top right of shield -->
+  <g transform="translate(340, 160)">
+    <circle cx="0" cy="0" r="28" fill="#dc2626" stroke="#ffffff" stroke-width="3" filter="url(#dropShadow)"/>
+    <text x="-4" y="8" font-family="Arial, sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle">A+</text>
+  </g>
+
+  <!-- Text: MARKS FOLIO -->
+  <text x="256" y="415" font-family="'Poppins', 'Segoe UI', sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="3">MARKS FOLIO</text>
+  <text x="256" y="445" font-family="'Noto Sans Devanagari', 'Poppins', sans-serif" font-size="18" font-weight="700" fill="#fef08a" text-anchor="middle" letter-spacing="1">अर्द्धवार्षिक मूल्यांकन अंक पत्रक</text>
+  <rect x="186" y="462" width="140" height="4" rx="2" fill="url(#goldGrad)"/>
+</svg>
