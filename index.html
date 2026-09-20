@@ -9,7 +9,7 @@
 <meta property="og:description" content="राज्य शिक्षा शोध एवं प्रशिक्षण परिषद, बिहार, पटना — अंक पत्रक (Marks Folio) स्वतः-भरण उपकरण एवं रिपोर्ट कार्ड जनरेटर">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -1777,102 +1777,61 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     border-radius: 4px;
   }
 
-  /* Attractive Creator & Attribution Footer */
+  /* Attractive Creator & Attribution Footer - Clean Single Line */
   .app-credit-footer {
-    margin-top: 36px;
-    margin-bottom: 32px;
+    margin-top: 32px;
+    margin-bottom: 28px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 0 12px;
+    padding: 0 16px;
   }
-  .credit-card {
+  .credit-single-line {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    border: 1.5px solid #e2e8f0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
-    border-radius: 9999px;
-    padding: 8px 22px 8px 10px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .credit-card:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    border-color: #cbd5e1;
-  }
-  .credit-avatar {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-    border: 1.5px solid #bfdbfe;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 18px;
-    flex-shrink: 0;
-  }
-  .credit-details {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    line-height: 1.28;
-  }
-  .credit-meta {
-    display: flex;
-    align-items: center;
     gap: 8px;
-    flex-wrap: wrap;
-  }
-  .credit-badge {
-    font-size: 10.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    background: #e0f2fe;
-    color: #0369a1;
-    padding: 2px 8px;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: 0.85rem;
+    color: #475569;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 9999px;
+    padding: 7px 20px;
+    letter-spacing: 0.01em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: all 0.2s ease;
   }
-  .credit-author {
-    font-size: 0.9rem;
-    font-weight: 800;
+  .credit-single-line:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
     color: #0f172a;
-    letter-spacing: -0.01em;
+  }
+  .credit-icon {
+    font-size: 0.92rem;
+    line-height: 1;
+  }
+  .credit-text strong {
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .credit-sep {
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 0.9rem;
   }
   .credit-school {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #475569;
-    margin-top: 2px;
-    flex-wrap: wrap;
-  }
-  .credit-tag {
-    font-size: 0.74rem;
-    font-weight: 600;
-    color: #475569;
-    background: #f1f5f9;
-    padding: 1.5px 7px;
-    border-radius: 4px;
-  }
-  .credit-subtext {
-    font-size: 0.76rem;
-    color: #94a3b8;
-    text-align: center;
     font-weight: 500;
+    color: #334155;
   }
-  @media (max-width: 640px) {
-    .credit-card {
-      border-radius: 18px;
-      padding: 12px 14px;
-      gap: 10px;
+  @media (max-width: 580px) {
+    .credit-single-line {
+      font-size: 0.76rem;
+      padding: 6px 14px;
+      gap: 6px;
+      flex-wrap: wrap;
+      border-radius: 12px;
     }
   }
 
@@ -2334,22 +2293,13 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     </div>
   </div>
 
-  <!-- Attractive Creator & School Attribution Card -->
+  <!-- Simple Single-line Creator Attribution -->
   <footer class="app-credit-footer" id="appCreditFooter">
-    <div class="credit-card">
-      <div class="credit-avatar">
-        <span>👨‍🏫</span>
-      </div>
-      <div class="credit-details">
-        <div class="credit-meta">
-          <span class="credit-badge">Created by</span>
-          <span class="credit-author">Neeraj Kumar</span>
-        </div>
-        <div class="credit-school">
-          <span style="color:#2563eb;">🏫</span>
-          <span>UMS Sarwanichak • Bochaha, Muzaffarpur</span>
-        </div>
-      </div>
+    <div class="credit-single-line">
+      <span class="credit-icon">🏫</span>
+      <span class="credit-text">Made by <strong>Neeraj Kumar</strong></span>
+      <span class="credit-sep">•</span>
+      <span class="credit-school">UMS Sarwanichak, Bochaha, Muzaffarpur</span>
     </div>
   </footer>
 </div>
