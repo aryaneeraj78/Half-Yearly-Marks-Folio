@@ -1,0 +1,8 @@
+{
+  "name": "अंक पत्रक (Marks Folio) — स्वतः-भरण उपकरण",
+  "description": "राज्य शिक्षा शोध एवं प्रशिक्षण परिषद, बिहार, पटना — अंक पत्रक (Marks Folio) स्वतः-भरण उपकरण एवं रिपोर्ट कार्ड जनरेटर",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
