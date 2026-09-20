@@ -168,7 +168,10 @@
   .rc-yellowbar{
     background:#fdf0c4;border:1.5px solid #e8c76b;border-radius:8px;
     padding:8px 16px;margin:10px 0 6px;font-size:0.85rem;color:#333;
+    flex:1;
   }
+  .rc-yellowbar-row{display:flex;align-items:center;gap:10px;}
+  .rc-side-icon{font-size:1.5rem;flex:none;}
   .rc-yellowbar b{color:#123e7d;}
   .rc-session-line{text-align:center;font-size:0.8rem;color:#333;margin-bottom:12px;}
 
@@ -196,7 +199,10 @@
     flex:1;background:#fdf6e0;border:1.5px solid #e8c76b;border-radius:8px;
     padding:10px;text-align:center;
   }
-  .rc-summary-box .icon{font-size:1.1rem;}
+  .rc-summary-box .icon{
+    font-size:1rem; width:28px; height:28px; border-radius:50%; background:#123e7d; color:#fff;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 4px;
+  }
   .rc-summary-box .lbl{font-size:0.68rem;color:#7a5b12;font-weight:700;margin:2px 0;}
   .rc-summary-box .val{font-size:0.95rem;color:#123e7d;font-weight:800;border-bottom:1px dotted #888;min-height:1.2em;}
 
@@ -905,7 +911,11 @@ function buildReportCardHTML(st){
       <img class="rc-logo" src="${BEP_LOGO}" alt="Bihar Education Project">
     </div>
     <div class="rc-ribbon">विद्यालय रिपोर्ट कार्ड<span class="en">SCHOOL REPORT CARD</span></div>
-    <div class="rc-yellowbar"><b>विद्यालय का नाम / School Name</b> : ${escapeHtml(meta.schoolName||'')}</div>
+    <div class="rc-yellowbar-row">
+      <div class="rc-side-icon">📖</div>
+      <div class="rc-yellowbar"><b>विद्यालय का नाम / School Name</b> : ${escapeHtml(meta.schoolName||'')}</div>
+      <div class="rc-side-icon">🎓</div>
+    </div>
     <div class="rc-session-line">शैक्षणिक सत्र / Academic Session : ${escapeHtml(meta.session||'')}</div>
 
     <div class="rc-meta">
