@@ -1295,45 +1295,42 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
   /* =================== OFFICIAL BIHAR REPORT CARD STYLES =================== */
   .rc-page {
     width: 794px;
-    min-height: 1118px;
+    height: 1123px;
+    max-height: 1123px;
     background: #ffffff;
     position: relative;
-    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+    font-family: 'Noto Sans Devanagari', 'Baloo 2', Arial, sans-serif;
     color: #002244;
     border: 3.5px solid #005696;
-    border-radius: 20px;
-    padding: 18px 24px 14px 24px;
+    border-radius: 16px;
+    padding: 16px 22px 14px 22px;
     box-sizing: border-box;
     box-shadow: 0 4px 16px rgba(0, 50, 100, 0.12);
     margin: 0 auto;
     overflow: hidden;
   }
-  /* Corner Geometric Accents (Golden Seal corners) */
-  .rc-page::before {
-    content: '';
+  /* Corner Geometric Gold Accents strictly inside boundary */
+  .rc-corner-tl {
     position: absolute;
-    top: -38px;
-    left: -38px;
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    background: #fed843;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 26px solid #fed843;
+    border-right: 26px solid transparent;
     z-index: 1;
     pointer-events: none;
-    border: 2px solid #e5ad06;
   }
-  .rc-page::after {
-    content: '';
+  .rc-corner-tr {
     position: absolute;
-    top: -38px;
-    right: -38px;
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    background: #fed843;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 26px solid #fed843;
+    border-left: 26px solid transparent;
     z-index: 1;
     pointer-events: none;
-    border: 2px solid #e5ad06;
   }
   .rc-inner-content {
     position: relative;
@@ -1422,7 +1419,7 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   }
   .rc-school-name {
-    font-size: 14.5px;
+    font-size: 14px;
     color: #002b5c;
     margin-bottom: 3px;
     line-height: 1.25;
@@ -1440,7 +1437,7 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     justify-content: center;
     align-items: center;
     gap: 20px;
-    font-size: 12.5px;
+    font-size: 12px;
     color: #003865;
   }
   .rc-session-item .lbl {
@@ -1452,14 +1449,15 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     color: #001f3f;
   }
 
-  /* Student Information Card with Perfectly Aligned HTML Table */
+  /* Student Information Card with High-Contrast Fill-In Boxes */
   .rc-info-card {
     background: #ffffff;
     border: 1.5px solid #005696;
     border-radius: 12px;
-    padding: 8px 14px;
+    padding: 8px 12px;
     margin-bottom: 10px;
     box-shadow: 0 1px 5px rgba(0, 86, 150, 0.06);
+    box-sizing: border-box;
   }
   .rc-info-table {
     width: 100%;
@@ -1467,48 +1465,57 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     table-layout: fixed;
   }
   .rc-info-table tr {
-    height: 26px;
+    height: 30px;
   }
   .rc-info-table td {
-    padding: 2px 0;
+    padding: 2px 4px;
     vertical-align: middle;
-  }
-  .rc-info-table .lbl {
-    font-size: 12.5px;
-    font-weight: 700;
-    color: #003865;
-    white-space: nowrap;
-  }
-  .rc-info-table .colon {
-    width: 10px;
-    text-align: center;
-    font-weight: 700;
-    color: #003865;
-    padding-right: 4px;
-  }
-  .rc-info-table .val {
-    padding-right: 12px;
-  }
-  .rc-info-table .right-lbl {
-    padding-left: 14px;
-  }
-  .rc-info-table .line {
-    border-bottom: 1.5px dotted #003865;
-    height: 20px;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    padding-left: 4px;
     box-sizing: border-box;
   }
-  .rc-info-table .txt {
-    font-size: 13px;
+  .rc-info-table .lbl-cell {
+    line-height: 1.2;
+    padding-right: 4px;
+  }
+  .rc-info-table .lbl-hi {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #003865;
+    display: inline-block;
+  }
+  .rc-info-table .lbl-en {
+    font-size: 9.5px;
+    font-weight: 600;
+    color: #475569;
+    display: inline-block;
+  }
+  .rc-info-table .right-col {
+    padding-left: 10px;
+  }
+  .rc-info-table .val-cell {
+    padding-right: 4px;
+  }
+  /* Proper Official Fill-In Box with Crisp High-Contrast Borders */
+  .rc-fill-box {
+    background: #f8fafc;
+    border: 1.2px solid #005696;
+    border-radius: 5px;
+    height: 25px;
+    line-height: 23px;
+    padding: 0 8px;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+  .rc-fill-box .txt {
+    font-size: 12px;
     font-weight: 700;
     color: #001f3f;
-    line-height: 16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: block;
+    line-height: 23px;
   }
 
   /* Academic Marks Table with Pixel-Perfect Alignment */
@@ -1671,38 +1678,31 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     background: #ffffff;
     border: 1.5px solid #005696;
     border-radius: 10px;
-    padding: 6px 14px;
-    margin-bottom: 12px;
+    padding: 7px 12px;
+    margin-bottom: 10px;
     box-shadow: 0 1px 4px rgba(0, 86, 150, 0.05);
+    box-sizing: border-box;
   }
   .rc-remarks-box .remarks-header {
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 700;
     color: #003865;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     display: flex;
     align-items: center;
     gap: 6px;
   }
-  .rc-remarks-box .remarks-line {
-    border-bottom: 1.5px dotted #003865;
-    height: 22px;
-    display: flex;
-    align-items: flex-end;
-    padding-left: 4px;
-    box-sizing: border-box;
-  }
-  .rc-remarks-box .line-text {
-    font-size: 12.5px;
+  .rc-remarks-box .remarks-content-box {
+    background: #f8fafc;
+    border: 1.2px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 12px;
     font-weight: 600;
-    color: #001f3f;
-    line-height: 18px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .rc-remarks-box .empty-line {
-    margin-top: 3px;
+    color: #0f2d59;
+    line-height: 1.45;
+    min-height: 32px;
+    box-sizing: border-box;
   }
 
   /* 4 Official Signatures Row */
@@ -1846,11 +1846,13 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     body.printing-report-card .rc-page {
       width: 100% !important;
       max-width: 794px !important;
-      min-height: 1115px !important;
+      height: 1120px !important;
+      max-height: 1120px !important;
       box-shadow: none !important;
       margin: 0 auto !important;
       page-break-after: always;
       border-width: 3.5px !important;
+      box-sizing: border-box !important;
     }
     @page { size: A4 portrait; margin: 4mm; }
   }
@@ -1889,8 +1891,6 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
         <span class="status-dot"></span>
         <span id="stCountText">विद्यार्थी: 0</span>
       </div>
-      <button class="btn-primary btn-sm" onclick="openGithubModal()" title="GitHub Pages / वेबसाइट पर लाइव करने हेतु HTML फ़ाइल व गाइड" style="background:#15803d; border-color:#166534; color:#fff; display:inline-flex; align-items:center; gap:5px; font-weight:700;">🚀 GitHub / लाइव फ़ाइल</button>
-      <button class="btn-secondary btn-sm" onclick="loadDemoData()" title="नमूना डेटा भरें">⚡ डेमो डेटा</button>
       <button class="btn-secondary btn-sm" onclick="resetAllData()" title="डेटा साफ़ करें">🔄 रीसेट</button>
     </div>
   </div>
@@ -1989,10 +1989,7 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
           📋 केवल नाम पेस्ट करें
         </button>
 
-        <button class="btn-secondary" onclick="loadEshikshakoshDemoData()" title="ई-शिक्षाकोष के 10 विद्यार्थियों का पूरा डेटा (माता-पिता के नाम सहित) लोड करें">
-          ✨ ई-शिक्षाकोष नमूना डेटा लोड करें
-        </button>
-      </div>
+        </div>
 
       <!-- Reasoning Criteria Card -->
       <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:12px; margin-top:8px;">
@@ -2275,86 +2272,8 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
   </div>
 </div>
 
-<!-- Modal Dialog for GitHub Pages & Live Website Export -->
-<div class="modal-backdrop" id="githubModal">
-  <div class="modal-window" style="max-width: 680px; width: 95%;">
-    <div class="modal-header" style="display:flex; justify-content:space-between; align-items:center;">
-      <h3 style="margin:0; font-size:1.1rem; display:flex; align-items:center; gap:8px; color:#15803d;">
-        <span>🚀</span> वेबसाइट को GitHub पर मुफ़्त में लाइव करें (GitHub Pages Ready)
-      </h3>
-      <button class="modal-close" onclick="closeGithubModal()" title="बंद करें">✕</button>
-    </div>
-    <div class="modal-body" style="padding:18px; max-height:75vh; overflow-y:auto;">
-      <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:10px; padding:14px; margin-bottom:16px;">
-        <div style="font-weight:700; color:#166534; font-size:0.92rem; margin-bottom:6px;">
-          ✅ यह पूरी वेबसाइट 100% सिंगल-फ़ाइल HTML (Single File) है!
-        </div>
-        <div style="font-size:0.84rem; color:#14532d; line-height:1.5;">
-          इसमें सभी स्टाइल, फोंट, ई-शिक्षाकोष एक्सेल रीडर, माता-पिता के नाम मैपिंग, अंक पत्रक गणना, बिहार सरकार के आधिकारिक वेक्टर सील और PDF जनरेटर पहले से अंतर्निहित (Bundled) हैं। आपको किसी सर्वर या डेटाबेस की आवश्यकता नहीं है!
-        </div>
-      </div>
-
-      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
-        <button class="btn-primary" onclick="downloadStandaloneHtml()" style="background:#15803d; border-color:#166534; font-size:0.9rem; padding:10px 18px; display:inline-flex; align-items:center; gap:8px; cursor:pointer;">
-          <span>📥</span> डाउनलोड करें index.html फ़ाइल
-        </button>
-        <button class="btn-secondary" onclick="copyStandaloneHtmlCode()" style="font-size:0.86rem; padding:10px 14px; cursor:pointer;">
-          <span>📋</span> पूरा HTML कोड कॉपी करें
-        </button>
-      </div>
-
-      <div style="font-weight:800; font-size:0.95rem; color:#1e293b; margin-bottom:10px; border-bottom:2px solid #e2e8f0; padding-bottom:6px;">
-        📖 GitHub Pages पर 2 मिनट में लाइव करने के 4 आसान चरण:
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap:12px; font-size:0.85rem; color:#334155; line-height:1.5;">
-        <div style="display:flex; gap:10px;">
-          <span style="background:#15803d; color:#fff; font-weight:700; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">1</span>
-          <div>
-            <b>GitHub पर नया Repository बनाएँ:</b><br>
-            <a href="https://github.com/new" target="_blank" style="color:#2563eb; text-decoration:underline; font-weight:600;">github.com/new</a> पर जाएँ, Repository Name में कोई भी नाम दें (उदा० <code>marks-folio</code> या <code>bihar-report-card</code>) और इसे <b>Public</b> रखकर <b>"Create repository"</b> पर क्लिक करें।
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px;">
-          <span style="background:#15803d; color:#fff; font-weight:700; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">2</span>
-          <div>
-            <b>index.html फ़ाइल अपलोड करें:</b><br>
-            नए बने पेज पर <b>"uploading an existing file"</b> लिंक पर क्लिक करें और ऊपर डाउनलोड की गई <code>index.html</code> फ़ाइल को अपलोड करें। नीचे हरा <b>"Commit changes"</b> बटन दबाएँ।
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px;">
-          <span style="background:#15803d; color:#fff; font-weight:700; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">3</span>
-          <div>
-            <b>GitHub Pages सक्षम (Enable) करें:</b><br>
-            रिपॉजिटरी के ऊपर <b>Settings</b> टैब पर क्लिक करें ➔ बाएँ मेनू से <b>Pages</b> चुनें ➔ <i>Build and deployment</i> के तहत <b>Branch: main</b> और Folder: <b>/ (root)</b> चुनकर <b>Save</b> पर क्लिक करें।
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px;">
-          <span style="background:#15803d; color:#fff; font-weight:700; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">4</span>
-          <div>
-            <b>🎉 आपकी वेबसाइट लाइव हो गई!</b><br>
-            लगभग 1 मिनट में आपको आपका निःशुल्क लाइव यूआरएल मिल जाएगा:<br>
-            <code style="background:#f1f5f9; padding:4px 10px; border-radius:4px; font-weight:700; color:#0f172a; display:inline-block; margin-top:4px; border:1px solid #cbd5e1;">https://&lt;your-github-username&gt;.github.io/&lt;repo-name&gt;/</code>
-          </div>
-        </div>
-      </div>
-
-      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-top:16px; font-size:0.82rem; color:#475569;">
-        💡 <b>बिना GitHub के भी 10 सेकंड में लाइव करें (Netlify Drop):</b><br>
-        आप <a href="https://app.netlify.com/drop" target="_blank" style="color:#2563eb; text-decoration:underline; font-weight:600;">app.netlify.com/drop</a> पर जाकर भी इस <code>index.html</code> फ़ाइल को सीधे ड्रैग-एंड-ड्रॉप कर सकते हैं, बिना किसी सेटअप के तुरंत लाइव लिंक मिल जाएगा!
-      </div>
-    </div>
-    <div class="modal-footer" style="display:flex; justify-content:flex-end; gap:8px; padding:12px 16px; background:#f8fafc; border-top:1px solid #e2e8f0;">
-      <button class="btn-secondary" onclick="closeGithubModal()">बंद करें</button>
-    </div>
-  </div>
-</div>
-
 <!-- Offscreen capture element for html2canvas -->
-<div id="reportCardCapture" style="position:fixed; left:-9999px; top:0; width:800px;"></div>
+<div id="reportCardCapture" style="position:fixed; left:-9999px; top:0; width:794px; height:1123px; display:none;"></div>
 
 <!-- Notification Toast -->
 <div class="toast" id="toastBox">
@@ -3145,10 +3064,10 @@ async function downloadFilledPDF(){
     for(let p = 0; p < pages.length; p++){
       pageEl.innerHTML = buildMarksFolioPage(pages[p], p * ROWS_PER_PAGE);
       await new Promise(r => setTimeout(r, 60));
-      const canvas = await html2canvas(pageEl, {scale: 2, useCORS: true, backgroundColor: '#ffffff'});
-      const imgData = canvas.toDataURL('image/jpeg', 0.95);
+      const canvas = await html2canvas(pageEl, {scale: 2.5, useCORS: true, backgroundColor: '#ffffff'});
+      const imgData = canvas.toDataURL('image/png');
       if(p > 0) pdf.addPage('a4', 'portrait');
-      pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+      pdf.addImage(imgData, 'PNG', 0, 0, 210, 297);
     }
     const fname = 'marks-folio-' + (document.getElementById('classSec').value.replace(/\s+/g,'_') || 'class') + '.pdf';
     pdf.save(fname);
@@ -3237,6 +3156,8 @@ function buildReportCardHTML(st){
 
   return `
     <div class="rc-page" id="rcStudentSheet">
+      <div class="rc-corner-tl"></div>
+      <div class="rc-corner-tr"></div>
       <div class="rc-inner-content">
         <!-- Top 3 Logos: Shiksha Vibhag Bihar (Left), Sarva Shiksha Abhiyan (Center), Bihar Education Project (Right) -->
         <div class="rc-top-header">
@@ -3270,49 +3191,39 @@ function buildReportCardHTML(st){
           </div>
         </div>
 
-        <!-- Student Information Card (HTML Table with strict column alignment) -->
+        <!-- Student Information Card (Official Form with Crisp High-Contrast Fill-in Boxes) -->
         <div class="rc-info-card">
           <table class="rc-info-table">
             <colgroup>
-              <col style="width: 175px;">
-              <col style="width: 10px;">
-              <col style="width: 195px;">
-              <col style="width: 165px;">
-              <col style="width: 10px;">
-              <col style="width: 190px;">
+              <col style="width: 25%;">
+              <col style="width: 25%;">
+              <col style="width: 24%;">
+              <col style="width: 26%;">
             </colgroup>
             <tbody>
               <tr>
-                <td class="lbl">विद्यार्थी का नाम (Student's Name)</td>
-                <td class="colon">:</td>
-                <td class="val"><div class="line"><span class="txt">${escapeHtml(st.name || '')}</span></div></td>
-                <td class="lbl right-lbl">वर्ग क्रमांक (Roll No.)</td>
-                <td class="colon">:</td>
-                <td class="val"><div class="line"><span class="txt">${escapeHtml(rollNo)}</span></div></td>
+                <td class="lbl-cell"><span class="lbl-hi">विद्यार्थी का नाम</span><br><span class="lbl-en">Student's Name</span></td>
+                <td class="val-cell"><div class="rc-fill-box"><span class="txt">${escapeHtml(st.name || '—')}</span></div></td>
+                <td class="lbl-cell right-col"><span class="lbl-hi">वर्ग क्रमांक</span><br><span class="lbl-en">Roll No.</span></td>
+                <td class="val-cell"><div class="rc-fill-box"><span class="txt">${escapeHtml(rollNo || '—')}</span></div></td>
               </tr>
               <tr>
-                <td class="lbl">माता का नाम (Mother's Name)</td>
-                <td class="colon">:</td>
-                <td class="val"><div class="line"><span class="txt">${escapeHtml(motherName)}</span></div></td>
-                <td class="lbl right-lbl">प्रवेशांक (Admission No.)</td>
-                <td class="colon">:</td>
-                <td class="val"><div class="line"><span class="txt">${escapeHtml(admNo)}</span></div></td>
+                <td class="lbl-cell"><span class="lbl-hi">माता का नाम</span><br><span class="lbl-en">Mother's Name</span></td>
+                <td class="val-cell"><div class="rc-fill-box"><span class="txt">${escapeHtml(motherName || '—')}</span></div></td>
+                <td class="lbl-cell right-col"><span class="lbl-hi">प्रवेशांक</span><br><span class="lbl-en">Admission No.</span></td>
+                <td class="val-cell"><div class="rc-fill-box"><span class="txt">${escapeHtml(admNo || '—')}</span></div></td>
               </tr>
               <tr>
-                <td class="lbl">पिता का नाम (Father's Name)</td>
-                <td class="colon">:</td>
-                <td class="val"><div class="line"><span class="txt">${escapeHtml(fatherName)}</span></div></td>
-                <td class="lbl right-lbl">जन्म तिथि (Date of Birth)</td>
-                <td class="colon">:</td>
-                <td class="val"><div class="line"><span class="txt">${escapeHtml(dob)}</span></div></td>
+                <td class="lbl-cell"><span class="lbl-hi">पिता का नाम</span><br><span class="lbl-en">Father's Name</span></td>
+                <td class="val-cell"><div class="rc-fill-box"><span class="txt">${escapeHtml(fatherName || '—')}</span></div></td>
+                <td class="lbl-cell right-col"><span class="lbl-hi">जन्म तिथि</span><br><span class="lbl-en">Date of Birth</span></td>
+                <td class="val-cell"><div class="rc-fill-box"><span class="txt">${escapeHtml(dob || '—')}</span></div></td>
               </tr>
               <tr>
-                <td class="lbl">कक्षा एवं वर्ग (Class & Section)</td>
-                <td class="colon">:</td>
-                <td class="val"><div class="line"><span class="txt">${escapeHtml(classSecVal)}</span></div></td>
-                <td class="lbl right-lbl">छात्र उपस्थिति (Attendance)</td>
-                <td class="colon">:</td>
-                <td class="val"><div class="line"><span class="txt">${escapeHtml(attendance)}</span></div></td>
+                <td class="lbl-cell"><span class="lbl-hi">कक्षा एवं वर्ग</span><br><span class="lbl-en">Class & Section</span></td>
+                <td class="val-cell"><div class="rc-fill-box"><span class="txt">${escapeHtml(classSecVal || '—')}</span></div></td>
+                <td class="lbl-cell right-col"><span class="lbl-hi">छात्र उपस्थिति</span><br><span class="lbl-en">Attendance</span></td>
+                <td class="val-cell"><div class="rc-fill-box"><span class="txt">${escapeHtml(attendance || '—')}</span></div></td>
               </tr>
             </tbody>
           </table>
@@ -3411,15 +3322,14 @@ function buildReportCardHTML(st){
           </div>
         </div>
 
-        <!-- Teacher's Remarks Box with Pristine Alignment -->
+        <!-- Teacher's Remarks Box with Crisp Structured Container -->
         <div class="rc-remarks-box">
           <div class="remarks-header">
             <span>✍️</span> वर्ग शिक्षक की टिप्पणी (Class Teacher's Remarks) :
           </div>
-          <div class="remarks-line">
-            <span class="line-text">${escapeHtml(autoRemark)}</span>
+          <div class="remarks-content-box">
+            ${escapeHtml(autoRemark)}
           </div>
-          <div class="remarks-line empty-line"></div>
         </div>
 
         <!-- 4 Official Signatures with Perfectly Leveled Top Lines -->
@@ -3524,24 +3434,78 @@ function printModalReportCard(){
   }, 1000);
 }
 
+// High-Fidelity Crystal-Clear Report Card Canvas Capture
+async function renderAndCaptureReportCard(st){
+  if(document.fonts && document.fonts.ready){
+    try { await document.fonts.ready; } catch(e){}
+  }
+
+  const capture = document.getElementById('reportCardCapture');
+  capture.innerHTML = buildReportCardHTML(st);
+
+  // Position at viewport origin (0, 0) with crisp 100% scale
+  capture.style.display = 'block';
+  capture.style.position = 'fixed';
+  capture.style.left = '0px';
+  capture.style.top = '0px';
+  capture.style.width = '794px';
+  capture.style.height = '1123px';
+  capture.style.zIndex = '999999';
+  capture.style.background = '#ffffff';
+  capture.style.visibility = 'visible';
+  capture.style.opacity = '1';
+  capture.style.transform = 'none';
+
+  // Wait for browser layout pass & Devanagari text shaping
+  await new Promise(r => setTimeout(r, 120));
+
+  const pageEl = capture.querySelector('.rc-page');
+  if(pageEl){
+    pageEl.style.transform = 'none';
+    pageEl.style.width = '794px';
+    pageEl.style.height = '1123px';
+  }
+
+  // html2canvas at scale 2.5 (crisp ~240 DPI high-definition rendering)
+  const canvas = await html2canvas(pageEl, {
+    scale: 2.5,
+    useCORS: true,
+    allowTaint: true,
+    backgroundColor: '#ffffff',
+    logging: false,
+    width: 794,
+    height: 1123,
+    windowWidth: 794,
+    windowHeight: 1123,
+    x: 0,
+    y: 0,
+    scrollX: 0,
+    scrollY: 0
+  });
+
+  // Restore and hide capture container immediately
+  capture.style.display = 'none';
+  capture.style.zIndex = '-9999';
+  capture.style.left = '-9999px';
+
+  return canvas;
+}
+
 async function downloadModalReportCardPDF(){
   const st = students[modalActiveStudentIdx];
   if(!st) return;
-  setStatus("Report Card PDF बन रहा है...");
+  setStatus("Report Card PDF बन रहा है (HD Quality)...");
   try{
-    const capture = document.getElementById('reportCardCapture');
-    capture.innerHTML = buildReportCardHTML(st);
-    await new Promise(r => setTimeout(r, 60));
-    const pageEl = capture.querySelector('.rc-page');
-    const canvas = await html2canvas(pageEl, {scale: 2, useCORS: true, backgroundColor: '#ffffff'});
-    const imgData = canvas.toDataURL('image/jpeg', 0.95);
+    const canvas = await renderAndCaptureReportCard(st);
+    // Lossless PNG data URL ensures zero compression blur and razor-sharp text
+    const imgData = canvas.toDataURL('image/png');
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF({orientation: 'portrait', unit: 'mm', format: 'a4'});
-    pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
+    pdf.addImage(imgData, 'PNG', 0, 0, 210, 297);
     const rollStr = st.roll ? ('_Roll_' + st.roll) : '';
     const fname = 'Report_Card' + rollStr + '_' + (st.name ? st.name.replace(/\s+/g,'_') : 'student') + '.pdf';
     pdf.save(fname);
-    setStatus("✔ Report Card PDF डाउनलोड हो गया");
+    setStatus("✔ Report Card PDF सफलतापूर्वक डाउनलोड हो गया");
   }catch(e){
     setStatus("Report Card डाउनलोड में त्रुटि: " + e.message, true);
   }
@@ -3552,21 +3516,17 @@ async function downloadAllReportCardsPDF(){
     setStatus("कोई विद्यार्थी डेटा मौजूद नहीं है", true);
     return;
   }
-  setStatus(`सभी विद्यार्थियों (${students.length}) का रिपोर्ट कार्ड PDF तैयार हो रहा है...`);
+  setStatus(`सभी विद्यार्थियों (${students.length}) का हाई-क्वालिटी PDF तैयार हो रहा है...`);
   try{
-    const capture = document.getElementById('reportCardCapture');
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF({orientation: 'portrait', unit: 'mm', format: 'a4'});
 
     for(let i = 0; i < students.length; i++){
       const st = students[i];
-      capture.innerHTML = buildReportCardHTML(st);
-      await new Promise(r => setTimeout(r, 60));
-      const pageEl = capture.querySelector('.rc-page');
-      const canvas = await html2canvas(pageEl, {scale: 2, useCORS: true, backgroundColor: '#ffffff'});
-      const imgData = canvas.toDataURL('image/jpeg', 0.95);
+      const canvas = await renderAndCaptureReportCard(st);
+      const imgData = canvas.toDataURL('image/png');
       if(i > 0) pdf.addPage('a4', 'portrait');
-      pdf.addImage(imgData, 'JPEG', 0, 0, 210, 297, undefined, 'FAST');
+      pdf.addImage(imgData, 'PNG', 0, 0, 210, 297);
       setStatus(`रिपोर्ट कार्ड PDF प्रगति: ${i+1} / ${students.length}`);
     }
     const meta = collectMeta();
@@ -4160,66 +4120,6 @@ async function importStudentNamesOnlyPDF(evt){
 const importNameRollPDF = importStudentNamesOnlyPDF; // backward compatibility
 
 // Modal Dialog Helpers for Direct Paste
-
-// GitHub Pages modal & download logic
-function openGithubModal(){
-  const m = document.getElementById('githubModal');
-  if(m) m.classList.add('open');
-}
-function closeGithubModal(){
-  const m = document.getElementById('githubModal');
-  if(m) m.classList.remove('open');
-}
-function downloadStandaloneHtml(){
-  fetch('index.html')
-    .then(res => {
-      if(!res.ok) throw new Error('Network response not ok');
-      return res.text();
-    })
-    .then(content => {
-      const blob = new Blob([content], {type: 'text/html;charset=utf-8'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'index.html';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      setStatus('✔ index.html डाउनलोड प्रारंभ हो गया!');
-    })
-    .catch(err => {
-      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-      const blob = new Blob([fullHtml], {type: 'text/html;charset=utf-8'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'index.html';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      setStatus('✔ index.html डाउनलोड हो गया!');
-    });
-}
-function copyStandaloneHtmlCode(){
-  fetch('index.html')
-    .then(res => res.text())
-    .then(content => {
-      navigator.clipboard.writeText(content).then(() => {
-        setStatus('✔ पूरा HTML कोड क्लिपबोर्ड पर कॉपी हो गया!');
-      }).catch(() => {
-        setStatus('कृपया ब्राउज़र क्लिपबोर्ड अनुमति दें।', true);
-      });
-    })
-    .catch(() => {
-      const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-      navigator.clipboard.writeText(fullHtml).then(() => {
-        setStatus('✔ पूरा HTML कोड क्लिपबोर्ड पर कॉपी हो गया!');
-      });
-    });
-}
-
 function openPasteNamesModal(){
   const modal = document.getElementById('pasteNamesModal');
   const input = document.getElementById('pasteNamesInput');
