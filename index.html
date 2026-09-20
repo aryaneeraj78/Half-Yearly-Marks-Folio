@@ -1034,7 +1034,10 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     padding: 16px 20px;
     background: #ffffff !important;
     color: #000000 !important;
-    font-family: 'Noto Sans Devanagari', 'Baloo 2', serif;
+    font-family: 'Noto Sans Devanagari', 'Baloo 2', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -1060,10 +1063,12 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     margin-bottom: 5px;
   }
   .mf-gov-emblem {
-    font-size: 1.6rem;
-    width: 32px;
-    text-align: center;
-    line-height: 1;
+    width: 44px;
+    height: 44px;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .mf-header-center {
     flex: 1;
@@ -1127,16 +1132,21 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     border-collapse: collapse;
     table-layout: fixed;
     border: 1.5px solid #000000;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+    background: #ffffff;
+    flex: 1 1 auto;
+  }
+  .mf-table thead {
+    height: 48px;
   }
   .mf-table th {
     border: 1px solid #000000 !important;
-    background: #f8fafc !important;
+    background: #f1f5f9 !important;
     color: #000000 !important;
     font-size: 10px;
     font-weight: 700;
     text-align: center;
-    padding: 2px 1px;
+    padding: 3px 1px;
     line-height: 1.15;
     vertical-align: middle;
   }
@@ -1151,16 +1161,24 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     font-weight: 600;
     color: #444444;
   }
+  .mf-table tbody {
+    height: calc(100% - 48px);
+  }
+  .mf-table tr {
+    height: calc((100% - 48px) / 30);
+    max-height: 27px;
+  }
   .mf-table td {
     border: 1px solid #000000 !important;
-    font-size: 9.5px;
+    font-size: 10px;
     text-align: center;
-    padding: 1px 1px;
-    height: 18.5px;
-    line-height: 1.15;
+    padding: 2px 1px;
+    height: 25px;
+    line-height: 1.2;
     overflow: hidden;
     color: #000000 !important;
     vertical-align: middle;
+    background: #ffffff;
   }
   .mf-table td.mf-name {
     text-align: left;
@@ -1194,13 +1212,13 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
   }
   .mf-instructions {
     border-top: 1px solid #000000;
-    padding-top: 3px;
+    padding-top: 4px;
     margin-top: 2px;
-    font-size: 9px;
-    line-height: 1.3;
+    font-size: 9.5px;
+    line-height: 1.35;
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     color: #111111;
   }
   .mf-inst-title {
@@ -1209,7 +1227,7 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
   .mf-signatures {
     display: flex;
     justify-content: space-between;
-    margin-top: 24px;
+    margin-top: 20px;
     padding: 0 4px;
     gap: 10px;
   }
@@ -1759,6 +1777,105 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     border-radius: 4px;
   }
 
+  /* Attractive Creator & Attribution Footer */
+  .app-credit-footer {
+    margin-top: 36px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 12px;
+  }
+  .credit-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1.5px solid #e2e8f0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+    border-radius: 9999px;
+    padding: 8px 22px 8px 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .credit-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+  }
+  .credit-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 1.5px solid #bfdbfe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .credit-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    line-height: 1.28;
+  }
+  .credit-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .credit-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 2px 8px;
+    border-radius: 9999px;
+  }
+  .credit-author {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+  }
+  .credit-school {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 2px;
+    flex-wrap: wrap;
+  }
+  .credit-tag {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    padding: 1.5px 7px;
+    border-radius: 4px;
+  }
+  .credit-subtext {
+    font-size: 0.76rem;
+    color: #94a3b8;
+    text-align: center;
+    font-weight: 500;
+  }
+  @media (max-width: 640px) {
+    .credit-card {
+      border-radius: 18px;
+      padding: 12px 14px;
+      gap: 10px;
+    }
+  }
+
   /* Mobile floating footer bar */
   .mobile-bar {
     position: fixed;
@@ -1773,21 +1890,27 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     justify-content: space-between;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
     z-index: 80;
+    gap: 8px;
   }
   .mobile-bar-info {
     font-size: 0.8rem;
     font-weight: 700;
     color: var(--primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 45%;
   }
   .mobile-bar-btns {
     display: flex;
-    gap: 8px;
+    gap: 6px;
+    align-items: center;
   }
 
   /* Print Styles */
   @media print {
     body { background: #fff !important; padding: 0 !important; }
-    .flagbar, .app-header, .nav-tabs-wrap, .panel-header, .btnrow, .preview-toolbar, .mobile-bar, .entry-mode-switch, .student-selector-bar, .subject-tags-container, .add-subject-row, .modal-backdrop {
+    .flagbar, .app-header, .nav-tabs-wrap, .panel-header, .btnrow, .preview-toolbar, .mobile-bar, .entry-mode-switch, .student-selector-bar, .subject-tags-container, .add-subject-row, .modal-backdrop, .app-credit-footer {
       display: none !important;
     }
     .panel { border: none !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; }
@@ -2034,18 +2157,31 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
         </div>
       </div>
 
-      <!-- Mode switcher: Student-wise vs Subject-wise -->
+      <!-- Mode switcher: Fast Entry (Subject-wise) first, then Student-wise -->
       <div class="entry-mode-switch">
-        <button class="entry-mode-btn active" id="modeBtnStudent" onclick="setEntryMode('student')">
-          👤 विद्यार्थीवार प्रविष्टि (सभी विषय)
+        <button class="entry-mode-btn active" id="modeBtnSubject" onclick="setEntryMode('subject')">
+          ⚡ 1-क्लिक विषयवार त्वरित प्रविष्टि (फास्ट एंट्री)
         </button>
-        <button class="entry-mode-btn" id="modeBtnSubject" onclick="setEntryMode('subject')">
-          ⚡ विषयवार त्वरित प्रविष्टि (फास्ट एंट्री)
+        <button class="entry-mode-btn" id="modeBtnStudent" onclick="setEntryMode('student')">
+          👤 विद्यार्थीवार विस्तृत प्रविष्टि (सभी विषय)
         </button>
       </div>
 
-      <!-- Mode A: Student-wise Entry -->
-      <div id="studentEntryView">
+      <!-- Mode A: Fast Subject-wise Entry (Now First for Easy Rapid Entry) -->
+      <div id="subjectEntryView" style="display:block;">
+        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:12px 16px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+          <div>
+            <div style="font-size:0.86rem; font-weight:700; color:var(--primary);">🎯 विषयवार त्वरित प्रविष्टि (Fast Entry Mode)</div>
+            <div style="font-size:0.78rem; color:var(--ink-soft);">एक विषय चुनें और सभी विद्यार्थियों के अंक लगातार फटाफट भरें (Enter दबाकर स्वतः अगला विद्यार्थी आता है)</div>
+          </div>
+          <span style="font-size:0.75rem; font-weight:700; background:#e0f2fe; color:#0369a1; padding:3px 10px; border-radius:20px;">⚡ सबसे तेज प्रविष्टि</span>
+        </div>
+        <div class="fast-entry-subject-picker" id="fastSubjectPicker"></div>
+        <div id="fastEntryCardContainer"></div>
+      </div>
+
+      <!-- Mode B: Student-wise Entry -->
+      <div id="studentEntryView" style="display:none;">
         <div class="student-selector-bar">
           <button class="btn-secondary btn-sm" onclick="navStudent(-1)">◀ पिछला</button>
           <div style="flex:1; max-width:320px;">
@@ -2120,13 +2256,6 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
         </div>
       </div>
 
-      <!-- Mode B: Fast Subject-wise Entry -->
-      <div id="subjectEntryView" style="display:none;">
-        <p style="font-size:0.8rem; color:var(--ink-soft); margin-bottom:8px;">विषय चुनें जिस पर आप सभी विद्यार्थियों के अंक लगातार भरना चाहते हैं:</p>
-        <div class="fast-entry-subject-picker" id="fastSubjectPicker"></div>
-        <div id="fastEntryCardContainer"></div>
-      </div>
-
     </div>
   </div>
 
@@ -2183,7 +2312,8 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
           <span style="font-weight:700; font-size:0.86rem; color:var(--primary);" id="pageIndicator">पेज 1 / 1</span>
           <button class="btn-secondary btn-sm" onclick="changePage(1)">अगला पेज ▶</button>
           <button class="btn-primary btn-sm" onclick="printOfficialFolio()">🖨️ सीधा प्रिंट करें</button>
-          <button class="btn-accent btn-sm" onclick="downloadFilledPDF()">🧾 PDF डाउनलोड</button>
+          <button class="btn-accent btn-sm" onclick="downloadCurrentPagePDF()" title="केवल यह वर्तमान पृष्ठ (Exact Page) PDF डाउनलोड करें">📄 यह पेज PDF</button>
+          <button class="btn-accent btn-sm" onclick="downloadFilledPDF()" title="सभी पृष्ठ (All Pages) एक साथ डाउनलोड करें">🧾 सभी पेज PDF</button>
         </div>
       </div>
 
@@ -2204,19 +2334,34 @@ window.BOOKS_PENCILS_RIGHT_SVG = `
     </div>
   </div>
 
-  <p style="text-align:center; font-size:0.75rem; color:var(--ink-soft); margin-top:24px;">
-    राज्य शिक्षा शोध एवं प्रशिक्षण परिषद्, बिहार, पटना — सर्व शिक्षा अभियान सहायता पोर्टल
-  </p>
+  <!-- Attractive Creator & School Attribution Card -->
+  <footer class="app-credit-footer" id="appCreditFooter">
+    <div class="credit-card">
+      <div class="credit-avatar">
+        <span>👨‍🏫</span>
+      </div>
+      <div class="credit-details">
+        <div class="credit-meta">
+          <span class="credit-badge">Created by</span>
+          <span class="credit-author">Neeraj Kumar</span>
+        </div>
+        <div class="credit-school">
+          <span style="color:#2563eb;">🏫</span>
+          <span>UMS Sarwanichak • Bochaha, Muzaffarpur</span>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
 
 <!-- Mobile Quick Bar (bottom) -->
 <div class="mobile-bar" id="mobileQuickBar">
   <div class="mobile-bar-info">
-    <span id="mbStudentName">विद्यार्थी</span>: <span id="mbTotal" style="color:var(--accent);">0</span>
+    <span id="mbStudentName">🏫 सेटअप</span>: <span id="mbTotal" style="color:var(--accent);">विद्यार्थी व विषय</span>
   </div>
   <div class="mobile-bar-btns">
-    <button class="btn-secondary btn-sm" onclick="navStudent(-1)">◀ पूर्व</button>
-    <button class="btn-primary btn-sm" onclick="navStudent(1)">अगला ▶</button>
+    <button class="btn-secondary btn-sm" onclick="navTab(-1)" title="पिछला अनुभाग">◀ पूर्व</button>
+    <button class="btn-primary btn-sm" onclick="navTab(1)" title="अगला अनुभाग">अगला ▶</button>
   </div>
 </div>
 
@@ -2296,7 +2441,7 @@ let currentPage = 0;
 let currentStudentIndex = 0;
 let activeSubjectIndex = 0;
 let activeTab = 'setup';
-let activeEntryMode = 'student';
+let activeEntryMode = 'subject';
 let modalActiveStudentIdx = 0;
 let rosterSearchTerm = "";
 
@@ -2361,21 +2506,46 @@ function switchTab(tabId){
     btnAll.classList.remove('active');
   }
 
+  if(tabId === 'entry' || tabId === 'all'){
+    setEntryMode(activeEntryMode);
+  }
+
   if(tabId === 'preview' || tabId === 'all'){
     setTimeout(fitPageToContainer, 50);
   }
+  updateMobileBar();
+}
+
+function navTab(dir){
+  const tabs = ['setup', 'entry', 'roster', 'preview'];
+  let currentIdx = tabs.indexOf(activeTab);
+  if(currentIdx === -1) currentIdx = 0;
+  let nextIdx = currentIdx + dir;
+  if(nextIdx < 0) nextIdx = tabs.length - 1;
+  else if(nextIdx >= tabs.length) nextIdx = 0;
+  switchTab(tabs[nextIdx]);
 }
 
 function setEntryMode(mode){
   activeEntryMode = mode;
-  document.getElementById('modeBtnStudent').className = 'entry-mode-btn ' + (mode==='student'?'active':'');
-  document.getElementById('modeBtnSubject').className = 'entry-mode-btn ' + (mode==='subject'?'active':'');
-  document.getElementById('studentEntryView').style.display = (mode==='student'?'block':'none');
-  document.getElementById('subjectEntryView').style.display = (mode==='subject'?'block':'none');
-  if(mode==='subject'){
+  const btnSubj = document.getElementById('modeBtnSubject');
+  const btnStud = document.getElementById('modeBtnStudent');
+  const viewSubj = document.getElementById('subjectEntryView');
+  const viewStud = document.getElementById('studentEntryView');
+
+  if(btnSubj) btnSubj.className = 'entry-mode-btn ' + (mode==='subject' ? 'active' : '');
+  if(btnStud) btnStud.className = 'entry-mode-btn ' + (mode==='student' ? 'active' : '');
+  if(viewSubj) viewSubj.style.display = (mode==='subject' ? 'block' : 'none');
+  if(viewStud) viewStud.style.display = (mode==='student' ? 'block' : 'none');
+
+  if(mode === 'subject'){
     renderFastSubjectPicker();
     renderFastEntryCard();
+  } else {
+    renderStudentSelect();
+    renderEntryCard();
   }
+  updateMobileBar();
 }
 
 /* ============ Subjects Management ============ */
@@ -2636,13 +2806,21 @@ function toggleStudentPresent(stIdx, subjectName){
 }
 
 function updateMobileBar(){
-  const st = students[currentStudentIndex];
   const nameEl = document.getElementById('mbStudentName');
   const totalEl = document.getElementById('mbTotal');
-  if(st && nameEl && totalEl){
-    nameEl.textContent = st.name || `विद्यार्थी ${currentStudentIndex+1}`;
-    totalEl.textContent = `कुल: ${calcTotal(st)}`;
-  }
+  if(!nameEl || !totalEl) return;
+
+  const tabLabels = {
+    'setup': { title: '🏫 विद्यालय व विषय', detail: `विद्यार्थी: ${students.length} | विषय: ${subjects.length}` },
+    'entry': { title: '✍️ प्राप्तांक प्रविष्टि', detail: students[currentStudentIndex] ? `${students[currentStudentIndex].name || 'विद्यार्थी '+(currentStudentIndex+1)} (कुल: ${calcTotal(students[currentStudentIndex])})` : 'कोई विद्यार्थी नहीं' },
+    'roster': { title: '👥 विद्यार्थी सूची', detail: `कुल विद्यार्थी: ${students.length}` },
+    'preview': { title: '📜 अंक पत्रक', detail: `पेज ${currentPage + 1} / ${Math.max(1, getPages().length)}` },
+    'all': { title: '📑 सभी अनुभाग', detail: 'समग्र दृश्य' }
+  };
+
+  const cur = tabLabels[activeTab] || { title: 'अनुभाग', detail: '' };
+  nameEl.textContent = cur.title;
+  totalEl.textContent = cur.detail;
 }
 
 /* ============ Fast Subject-wise Entry ============ */
@@ -2701,6 +2879,7 @@ function renderFastEntryCard(){
         min="0" max="${s.max}"
         inputmode="numeric"
         ${!m.present ? 'disabled' : ''}
+        onkeydown="if(event.key==='Enter'){event.preventDefault();fastNextStudent();}"
         oninput="handleFastMarkInput(this.value, ${s.max})">
 
       ${isOver ? `<div style="color:var(--danger);font-size:0.78rem;font-weight:700;margin-bottom:8px;">⚠️ अंक पूर्णांक ${s.max} से अधिक नहीं हो सकते!</div>` : ''}
@@ -2896,13 +3075,13 @@ function buildMarksFolioPage(pageStudents, pageStartIndex){
     <div class="mf-frame">
       <!-- Top Official SCERT Header -->
       <div class="mf-header">
-        <div class="mf-gov-emblem">🏛️</div>
+        <div class="mf-gov-emblem" title="शिक्षा विभाग, बिहार">${window.SHIKSHA_VIBHAG_SVG || '🏛️'}</div>
         <div class="mf-header-center">
           <div class="mf-title1">राज्य शिक्षा शोध एवं प्रशिक्षण परिषद्, बिहार, पटना</div>
           <div class="mf-title2">अंक पत्रक (MARKS FOLIO)</div>
           <div class="mf-title3">अर्द्धवार्षिक / वार्षिक मूल्यांकन — परीक्षा सत्र : <b>${escapeHtml(meta.session || '2025-2026')}</b></div>
         </div>
-        <div class="mf-gov-emblem">📜</div>
+        <div class="mf-gov-emblem" title="बिहार शिक्षा परियोजना">${window.BEP_LOGO ? `<img src="${window.BEP_LOGO}" alt="BEP" style="width:38px;height:38px;object-fit:contain;border-radius:50%;">` : '📜'}</div>
       </div>
 
       <!-- Evaluation Center & School Metadata Table -->
@@ -3044,35 +3223,130 @@ function fitPageToContainer(){
 window.addEventListener('resize', fitPageToContainer);
 
 function printOfficialFolio(){
-  renderOfficialPreview();
+  const pages = getPages();
+  const pageEl = document.getElementById('officialPage');
+  if(!pageEl) return;
+
+  // If multiple pages, render all pages sequentially for printer
+  if(pages.length > 1){
+    pageEl.innerHTML = pages.map((pageData, pIdx) => `
+      <div style="page-break-after: ${pIdx < pages.length - 1 ? 'always' : 'auto'}; width: 100%; box-sizing: border-box; margin-bottom: 20px;">
+        ${buildMarksFolioPage(pageData, pIdx * ROWS_PER_PAGE)}
+      </div>
+    `).join('');
+  } else {
+    pageEl.innerHTML = buildMarksFolioPage(pages[0] || [], 0);
+  }
+
   document.body.classList.remove('printing-report-card');
   document.body.classList.add('printing-marks-folio');
   window.print();
   setTimeout(() => {
     document.body.classList.remove('printing-marks-folio');
+    renderOfficialPreview();
   }, 800);
 }
 
-async function downloadFilledPDF(){
-  setStatus("PDF तैयार हो रहा है...");
+// Dedicated Ultra-HD (300 DPI) capture function for Marks Folio without parent transforms
+async function renderAndCaptureMarksFolio(pageStudents, pageStartIndex){
+  if(document.fonts && document.fonts.ready){
+    try { await document.fonts.ready; } catch(e){}
+  }
+
+  const capture = document.getElementById('reportCardCapture');
+  capture.innerHTML = `
+    <div class="mf-page" style="width:794px; height:1123px; max-height:1123px; transform:none; box-sizing:border-box; margin:0; background:#ffffff;">
+      ${buildMarksFolioPage(pageStudents, pageStartIndex)}
+    </div>
+  `;
+
+  // Position at viewport origin (0, 0) with crisp 100% scale and ZERO parent transforms
+  capture.style.display = 'block';
+  capture.style.position = 'fixed';
+  capture.style.left = '0px';
+  capture.style.top = '0px';
+  capture.style.width = '794px';
+  capture.style.height = '1123px';
+  capture.style.zIndex = '999999';
+  capture.style.background = '#ffffff';
+  capture.style.visibility = 'visible';
+  capture.style.opacity = '1';
+  capture.style.transform = 'none';
+
+  // Wait for browser layout pass & Devanagari text shaping
+  await new Promise(r => setTimeout(r, 140));
+
+  const pageEl = capture.querySelector('.mf-page');
+  if(pageEl){
+    pageEl.style.transform = 'none';
+    pageEl.style.width = '794px';
+    pageEl.style.height = '1123px';
+  }
+
+  // html2canvas at scale 3 (exact 300 DPI true print clarity)
+  const canvas = await html2canvas(pageEl, {
+    scale: 3,
+    useCORS: true,
+    allowTaint: true,
+    backgroundColor: '#ffffff',
+    logging: false,
+    width: 794,
+    height: 1123,
+    windowWidth: 794,
+    windowHeight: 1123,
+    x: 0,
+    y: 0,
+    scrollX: 0,
+    scrollY: 0
+  });
+
+  // Hide capture container immediately
+  capture.style.display = 'none';
+  capture.style.zIndex = '-9999';
+  capture.style.left = '-9999px';
+
+  return canvas;
+}
+
+async function downloadCurrentPagePDF(){
+  setStatus(`वर्तमान अंक पत्रक पृष्ठ ${currentPage + 1} का PDF तैयार हो रहा है...`);
   try{
     const pages = getPages();
-    const pageEl = document.getElementById('officialPage');
+    const pageData = pages[currentPage] || [];
+    const canvas = await renderAndCaptureMarksFolio(pageData, currentPage * ROWS_PER_PAGE);
+    const imgData = canvas.toDataURL('image/png');
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({orientation:'portrait', unit:'mm', format:'a4'});
+    pdf.addImage(imgData, 'PNG', 0, 0, 210, 297, undefined, 'FAST');
+    const meta = collectMeta();
+    const fname = 'Marks_Folio_' + (meta.classSec ? meta.classSec.replace(/\s+/g,'_') : 'Class') + '_Page_' + (currentPage + 1) + '.pdf';
+    pdf.save(fname);
+    renderOfficialPreview();
+    setStatus(`✔ अंक पत्रक पृष्ठ ${currentPage + 1} (Exact Preview Page) PDF डाउनलोड हो गया`);
+  }catch(e){
+    setStatus("PDF बनाने में त्रुटि: " + e.message, true);
+  }
+}
+
+async function downloadFilledPDF(){
+  setStatus("अंक पत्रक (Marks Folio) PDF तैयार हो रहा है (300 DPI HD क्वालिटी)...");
+  try{
+    const pages = getPages();
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF({orientation:'portrait', unit:'mm', format:'a4'});
 
     for(let p = 0; p < pages.length; p++){
-      pageEl.innerHTML = buildMarksFolioPage(pages[p], p * ROWS_PER_PAGE);
-      await new Promise(r => setTimeout(r, 60));
-      const canvas = await html2canvas(pageEl, {scale: 2.5, useCORS: true, backgroundColor: '#ffffff'});
+      setStatus(`अंक पत्रक PDF तैयार हो रहा है: पृष्ठ ${p + 1} / ${pages.length}...`);
+      const canvas = await renderAndCaptureMarksFolio(pages[p], p * ROWS_PER_PAGE);
       const imgData = canvas.toDataURL('image/png');
       if(p > 0) pdf.addPage('a4', 'portrait');
-      pdf.addImage(imgData, 'PNG', 0, 0, 210, 297);
+      pdf.addImage(imgData, 'PNG', 0, 0, 210, 297, undefined, 'FAST');
     }
-    const fname = 'marks-folio-' + (document.getElementById('classSec').value.replace(/\s+/g,'_') || 'class') + '.pdf';
+    const meta = collectMeta();
+    const fname = 'Marks_Folio_' + (meta.classSec ? meta.classSec.replace(/\s+/g,'_') : 'Class') + '.pdf';
     pdf.save(fname);
     renderOfficialPreview();
-    setStatus("✔ भरा हुआ अंक पत्रक PDF डाउनलोड हो गया");
+    setStatus("✔ भरा हुआ अंक पत्रक (Marks Folio) HD PDF डाउनलोड हो गया");
   }catch(e){
     setStatus("PDF बनाने में त्रुटि: " + e.message, true);
   }
@@ -3466,9 +3740,9 @@ async function renderAndCaptureReportCard(st){
     pageEl.style.height = '1123px';
   }
 
-  // html2canvas at scale 2.5 (crisp ~240 DPI high-definition rendering)
+  // html2canvas at scale 3 (exact 300 DPI high-definition rendering)
   const canvas = await html2canvas(pageEl, {
-    scale: 2.5,
+    scale: 3,
     useCORS: true,
     allowTaint: true,
     backgroundColor: '#ffffff',
